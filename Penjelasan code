@@ -1,0 +1,45 @@
+Kelas Karyawan
+- Properti:
+  - Nama: Properti untuk menyimpan nama karyawan. Menggunakan sintaks get dan set untuk mengakses dan mengubah nilai pribadi nama.
+  - ID: Properti untuk menyimpan ID karyawan. Menggunakan sintaks get dan set untuk mengakses dan mengubah nilai pribadi id.
+  - GajiPokok: Properti untuk menyimpan gaji pokok karyawan. Menggunakan sintaks get dan set untuk mengakses dan mengubah nilai pribadi gajiPokok.
+- Metode:
+  - HitungGaji(): Metode virtual yang mengembalikan nilai gajiPokok. Metode ini dapat ditimpa oleh kelas turunan untuk memberikan perhitungan gaji yang berbeda.
+
+ Kelas KaryawanTetap
+- Pewarisan:
+  - Mewarisi dari kelas Karyawan, sehingga memiliki semua properti dan metode yang ada di Karyawan.
+- Metode:
+  - HitungGaji(): Meng-override metode HitungGaji() dari kelas Karyawan untuk menambahkan bonus tetap sebesar 500.000 ke gaji pokok. Ini mencerminkan keuntungan atau insentif yang diberikan kepada karyawan tetap.
+
+Kelas KaryawanKontrak
+- Pewarisan:
+  - Mewarisi dari kelas Karyawan.
+- Metode:
+  - HitungGaji(): Meng-override metode HitungGaji() dari kelas Karyawan untuk mengurangi jumlah tetap sebesar 200.000 dari gaji pokok. Ini mungkin mencerminkan biaya tambahan atau pengurangan yang terkait dengan status kontrak karyawan.
+
+Kelas KaryawanMagang
+- Pewarisan:
+  - Mewarisi dari kelas Karyawan.
+- Metode:
+  - HitungGaji(): Meng-override metode HitungGaji() dari kelas Karyawan tetapi tidak memodifikasi gaji pokok. Mengembalikan gaji pokok seperti semula. Ini mencerminkan bahwa karyawan magang mungkin tidak mendapatkan tambahan atau pengurangan gaji.
+
+Program Utama 
+- Metode Main:
+  - Input Jenis Karyawan:
+    - Meminta pengguna untuk memasukkan jenis karyawan (Tetap, Kontrak, atau Magang). Input ini akan menentukan jenis instance yang akan dibuat.
+  - Input Data Karyawan:
+    - Meminta pengguna untuk memasukkan nama, ID, dan gaji pokok karyawan. Gaji pokok divalidasi untuk memastikan itu adalah angka positif.
+  - Pembuatan Instance:
+    - Berdasarkan jenis karyawan yang dimasukkan, program membuat instance dari kelas turunan yang sesuai (KaryawanTetap, KaryawanKontrak, atau KaryawanMagang).
+  - Pengaturan Properti:
+    - Properti Nama, ID, dan GajiPokok dari instance yang dibuat diatur menggunakan input pengguna.
+  - Perhitungan dan Output Gaji:
+    - Memanggil metode HitungGaji() pada instance yang dibuat untuk menghitung gaji akhir. Hasilnya dicetak ke konsol.
+Konsep Pemrograman 
+- Pewarisan:
+  - Kelas KaryawanTetap, KaryawanKontrak, dan KaryawanMagang mewarisi dari kelas Karyawan, memungkinkan penggunaan ulang kode dan pengelolaan properti yang sama.
+- Polimorfisme:
+  - Metode HitungGaji() ditimpa di setiap kelas turunan untuk memberikan implementasi yang berbeda. Ini memungkinkan perhitungan gaji yang berbeda untuk setiap jenis karyawan.
+- Enkapsulasi:
+  - Properti pribadi (nama, id, gajiPokok) diakses dan dimodifikasi melalui properti publik, menjaga integritas data.
